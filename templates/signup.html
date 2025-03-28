@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Signup</h2>
+    <form action="{{ url_for('signup') }}" method="POST">
+        <input type="text" name="iot_device_id" required>
+        <input type="text" name="phone_email" required>
+        <input type="password" name="password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    
+
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+</body>
+</html>
