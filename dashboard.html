@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUAWATCH - The Predictor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #add8e6;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .navbar a:hover {
+            background-color: #87cefa;
+            border-radius: 10px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .hero-section {
+            background-image: url('../static/ed905a52-00ed-4a5e-9772-68e0a8bf1e71.jfif'); /* Replace with actual image path */
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+        .contact {
+            padding: 10px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #333;
+        }
+        /* Dropdown Styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px;
+            display: block;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../static/aqua.png" alt="Logo"> 
+            <img src="../static/watch.png" alt="Logo"> 
+        </div>
+        <a href="#">Home</a>
+        <a href="#">Guide</a>
+        <a href="#">History</a>
+        <a href="#">Notification</a>
+        <a href="#">Prediction</a>
+        
+        <!-- Dropdown for user -->
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Hey, {{ user.phone_email }}</a>
+            <div class="dropdown-content">
+                <a href="#">Your IoT Device ID: {{ user.iot_device_id }}</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        
+    </div>
+
+    <div class="navbar">
+        <p>Customer Support
+        <br/>
+        Email: aquawatch@gmail.com
+        <br/>
+        Phone: 9110023155
+        </p>
+        </div>
+
+    <script>
+        // Example JavaScript for dynamic greeting
+        document.addEventListener('DOMContentLoaded', function() {
+            const time = new Date().getHours();
+            let greeting;
+            if (time < 12) {
+                greeting = "WELCOME, {{ user.phone_email }}!";
+            } else if (time < 18) {
+                greeting = "WELCOME, {{ user.phone_email }}!";
+            } else {
+                greeting = "WELCOME , {{ user.phone_email }}!";
+            }
+            alert(greeting);
+        });
+    </script>
+</body>
+</html>
