@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>📘User Guide</h1>
+
+    <h2>1. OVERVIEW</h2>
+    <p>This IoT-based system monitors water parameters.</p>
+
+    
+
+    <h2>2.ABOUT DEVICE</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: left;">
+        <thead style="background-color: #f0f0f0;">
+            <tr>
+                <th>Microcontroller</th>
+                <th>Sensor</th>
+                <th>Purpose</th>
+                <th>Connection Type</th>
+                <th>Model no</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="5">ESP32</td>
+                <td>pH Sensor</td>
+                <td>Measures water acidity/alkalinity</td>
+                <td>Analog (Model:ENB-C 201)</td>
+                <td>ENB-C 201</td>
+            </tr>
+            <tr>
+                <td>TDS Sensor</td>
+                <td>Measures total dissolved solids in water</td>
+                <td>Analog</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Temperature Sensor</td>
+                <td>Monitors water temperature</td>
+                <td>Digital</td>
+                <td>DS18B20 </td>
+            </tr>
+            <tr>
+                <td>Turbidity Sensor</td>
+                <td>Measures water clarity</td>
+                <td>Analog</td>
+                <td>20240611K</td>
+            </tr>
+            <tr>
+                <td>Conductivity Sensor</td>
+                <td>Detects electrical conductivity of water</td>
+                <td>Analog</td>
+                <td>20240611K</td>
+
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <h2>3.USER MANUAL</h2>
+    
+    <p>
+        1. Connect 5v DC power suplly to Device by using Micro-USB cable. <br>
+        2. Deep the Device in water sample.<br>
+        3. Now the device is ready for use.<br>
+        4. The results arer displayed in Prediction section
+    </p>
+
+
+    <h2>4.INSTRUCTIONS</h2>
+    
+    <p>
+        1. The device should be operated only when it is fully submerged in water. <br>
+        2. The model is designed to function optimally when submerged to a depth of up to 30 cm.<br>
+        3. A DC power supply of up to 5 volts should be provided for proper operation.<br>
+      
+        </p>
+
+    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+</body>
+</html>
