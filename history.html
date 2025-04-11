@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+
+            /* Make the body a flex container */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: #add8e6;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .navbar a:hover {
+            background-color: #87cefa;
+            border-radius: 10px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .bottom-navbar {
+            background-color: #87cefa;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto; /* Pushes to bottom */
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP NAVBAR -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="../static/aqua.png" alt="Logo"> 
+            <img src="../static/watch.png" alt="Logo"> 
+        </div>
+        <a href="{{ url_for('dashboard') }}">Home</a>
+        <a href="{{ url_for('guide') }}">Guide</a>
+        <a href="{{ url_for('history') }}">History</a>
+        <a href="{{ url_for('notification') }}">Notification</a>
+        <a href="{{ url_for('prediction') }}">Prediction</a>
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Hey, {{ user.phone_email }}</a>
+            <div class="dropdown-content">
+                <a href="#">Your IoT Device ID: {{ user.iot_device_id }}</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <p>History</p>
+
+    <!-- ✅ BOTTOM NAVBAR -->
+    <div class="bottom-navbar">
+        <p>Customer Support
+            <br/>
+            Email: aquawatch@gmail.com
+            <br/>
+            Phone: 9110023155
+        </p>
+    </div>
+</body>
+</html>
