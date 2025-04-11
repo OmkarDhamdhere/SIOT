@@ -4,7 +4,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'  # Change this to a strong secret key
+app.config['SECRET_KEY'] = '65712417738724197264956526'  # Change this to a strong secret key
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Prevents unnecessary warnings
 
@@ -87,7 +87,25 @@ def logout():
     flash('You have been logged out.', 'info')
     return redirect(url_for('login'))
 
+@app.route('/guide')
+def guide():
+    return render_template('guide.html', user=current_user)
+
+@app.route('/history')
+def history():
+    return render_template('history.html', user=current_user)
+
+@app.route('/notification')
+def notification():
+    return render_template('notification.html', user=current_user)
+
+@app.route('/prediction')
+def prediction():
+    return render_template('prediction.html', user=current_user)
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()  # Ensure database tables are created
     app.run(debug=True)
+
+
